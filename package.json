@@ -5,12 +5,13 @@
   "scripts": {
     "start": "node ./bin/www",
     "dev": "nodemon ./bin/www",
-    "client-start": "cd client && npm start",
-    "app": "concurrently npm:dev npm:client-start --kill-others",
+    "client:start": "cd client && npm start",
+    "app": "concurrently npm:dev npm:client:start --kill-others",
     "lint": "eslint .",
-    "lint-fix": "eslint . --fix",
-    "client-lint": "cd client && npm run lint",
-    "app-lint": "concurrently npm:lint npm:client-lint"
+    "lint:fix": "eslint . --fix",
+    "client:lint": "cd client && npm run lint",
+    "client:lint:fix": "cd client && npm run lint:fix",
+    "app:lint": "concurrently npm:lint npm:client:lint"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
